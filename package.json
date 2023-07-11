@@ -1,6 +1,6 @@
 {
   "name": "react-native-macos",
-  "version": "0.71.20",
+  "version": "0.71.21",
   "bin": "./cli.js",
   "description": "React Native for macOS",
   "license": "MIT",
@@ -208,7 +208,7 @@
     "micromatch": "^4.0.0",
     "readable-stream": "^4.0.0",
     "shell-quote": "^1.7.3",
-     "tough-cookie": "^4.1.3"
+    "tough-cookie": "^4.1.3"
   },
   "_justification": {
     "async": "Versions of async prior to 3.2.2 are vulnerable to prototype pollution",
