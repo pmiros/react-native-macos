@@ -62,7 +62,7 @@ PODS:
     - React-jsi (= 0.71.25)
     - React-jsiexecutor (= 0.71.25)
     - React-perflogger (= 0.71.25)
-    - SocketRocket (= 0.6.0)
+    - SocketRocket (= 0.7.0)
     - Yoga
   - React-Core/CoreModulesHeaders (0.71.25):
     - glog
@@ -73,7 +73,7 @@ PODS:
     - React-jsi (= 0.71.25)
     - React-jsiexecutor (= 0.71.25)
     - React-perflogger (= 0.71.25)
-    - SocketRocket (= 0.6.0)
+    - SocketRocket (= 0.7.0)
     - Yoga
   - React-Core/Default (0.71.25):
     - glog
@@ -83,7 +83,7 @@ PODS:
     - React-jsi (= 0.71.25)
     - React-jsiexecutor (= 0.71.25)
     - React-perflogger (= 0.71.25)
-    - SocketRocket (= 0.6.0)
+    - SocketRocket (= 0.7.0)
     - Yoga
   - React-Core/DevSupport (0.71.25):
     - glog
@@ -96,7 +96,7 @@ PODS:
     - React-jsiexecutor (= 0.71.25)
     - React-jsinspector (= 0.71.25)
     - React-perflogger (= 0.71.25)
-    - SocketRocket (= 0.6.0)
+    - SocketRocket (= 0.7.0)
     - Yoga
   - React-Core/RCTActionSheetHeaders (0.71.25):
     - glog
@@ -107,7 +107,7 @@ PODS:
     - React-jsi (= 0.71.25)
     - React-jsiexecutor (= 0.71.25)
     - React-perflogger (= 0.71.25)
-    - SocketRocket (= 0.6.0)
+    - SocketRocket (= 0.7.0)
     - Yoga
   - React-Core/RCTAnimationHeaders (0.71.25):
     - glog
@@ -118,7 +118,7 @@ PODS:
     - React-jsi (= 0.71.25)
     - React-jsiexecutor (= 0.71.25)
     - React-perflogger (= 0.71.25)
-    - SocketRocket (= 0.6.0)
+    - SocketRocket (= 0.7.0)
     - Yoga
   - React-Core/RCTBlobHeaders (0.71.25):
     - glog
@@ -129,7 +129,7 @@ PODS:
     - React-jsi (= 0.71.25)
     - React-jsiexecutor (= 0.71.25)
     - React-perflogger (= 0.71.25)
-    - SocketRocket (= 0.6.0)
+    - SocketRocket (= 0.7.0)
     - Yoga
   - React-Core/RCTImageHeaders (0.71.25):
     - glog
@@ -140,7 +140,7 @@ PODS:
     - React-jsi (= 0.71.25)
     - React-jsiexecutor (= 0.71.25)
     - React-perflogger (= 0.71.25)
-    - SocketRocket (= 0.6.0)
+    - SocketRocket (= 0.7.0)
     - Yoga
   - React-Core/RCTLinkingHeaders (0.71.25):
     - glog
@@ -151,7 +151,7 @@ PODS:
     - React-jsi (= 0.71.25)
     - React-jsiexecutor (= 0.71.25)
     - React-perflogger (= 0.71.25)
-    - SocketRocket (= 0.6.0)
+    - SocketRocket (= 0.7.0)
     - Yoga
   - React-Core/RCTNetworkHeaders (0.71.25):
     - glog
@@ -162,7 +162,7 @@ PODS:
     - React-jsi (= 0.71.25)
     - React-jsiexecutor (= 0.71.25)
     - React-perflogger (= 0.71.25)
-    - SocketRocket (= 0.6.0)
+    - SocketRocket (= 0.7.0)
     - Yoga
   - React-Core/RCTPushNotificationHeaders (0.71.25):
     - glog
@@ -173,7 +173,7 @@ PODS:
     - React-jsi (= 0.71.25)
     - React-jsiexecutor (= 0.71.25)
     - React-perflogger (= 0.71.25)
-    - SocketRocket (= 0.6.0)
+    - SocketRocket (= 0.7.0)
     - Yoga
   - React-Core/RCTSettingsHeaders (0.71.25):
     - glog
@@ -184,7 +184,7 @@ PODS:
     - React-jsi (= 0.71.25)
     - React-jsiexecutor (= 0.71.25)
     - React-perflogger (= 0.71.25)
-    - SocketRocket (= 0.6.0)
+    - SocketRocket (= 0.7.0)
     - Yoga
   - React-Core/RCTTextHeaders (0.71.25):
     - glog
@@ -195,7 +195,7 @@ PODS:
     - React-jsi (= 0.71.25)
     - React-jsiexecutor (= 0.71.25)
     - React-perflogger (= 0.71.25)
-    - SocketRocket (= 0.6.0)
+    - SocketRocket (= 0.7.0)
     - Yoga
   - React-Core/RCTVibrationHeaders (0.71.25):
     - glog
@@ -206,7 +206,7 @@ PODS:
     - React-jsi (= 0.71.25)
     - React-jsiexecutor (= 0.71.25)
     - React-perflogger (= 0.71.25)
-    - SocketRocket (= 0.6.0)
+    - SocketRocket (= 0.7.0)
     - Yoga
   - React-Core/RCTWebSocket (0.71.25):
     - glog
@@ -217,7 +217,7 @@ PODS:
     - React-jsi (= 0.71.25)
     - React-jsiexecutor (= 0.71.25)
     - React-perflogger (= 0.71.25)
-    - SocketRocket (= 0.6.0)
+    - SocketRocket (= 0.7.0)
     - Yoga
   - React-CoreModules (0.71.25):
     - RCT-Folly (= 2021.07.22.00)
@@ -228,7 +228,7 @@ PODS:
     - React-RCTBlob
     - React-RCTImage (= 0.71.25)
     - ReactCommon/turbomodule/core (= 0.71.25)
-    - SocketRocket (= 0.6.0)
+    - SocketRocket (= 0.7.0)
   - React-cxxreact (0.71.25):
     - boost (= 1.76.0)
     - DoubleConversion
@@ -367,7 +367,7 @@ PODS:
   - ScreenshotManager (0.0.1):
     - RCT-Folly (= 2021.07.22.00)
     - React-Core
-  - SocketRocket (0.6.0)
+  - SocketRocket (0.7.0)
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -505,8 +505,8 @@ SPEC CHECKSUMS:
   React: 68daf4e14eef628b888b042c546e0c938f69197e
   React-callinvoker: f305849bc981851f63587c9b66c9c26d34174fe1
   React-Codegen: ea7f0964556b3ed6571ab10bc0b7f8f59b4f1955
-  React-Core: 7abe16fc5c1904d16f45b4e9838897f03b1d5deb
-  React-CoreModules: 357bff11a284cb5c93087e881a69aad080a422d0
+  React-Core: 453e06698f801c3ea4fe4d10ed463084efc026ab
+  React-CoreModules: 12727c3dad90c8a387a442cf0ca4c46e2072709e
   React-cxxreact: 18b6b33cacb74098ffa0deae40fab863d1e8cfb2
   React-jsc: 257f7fb237290405058a8734d1e8d98cbc2c02c2
   React-jsi: 4af0ef05f2fde44544714a4cc4552fd698228784
@@ -529,7 +529,7 @@ SPEC CHECKSUMS:
   React-runtimeexecutor: 1dbfd401c996cb6124a4d85d9a78e95fe7b1d9c2
   ReactCommon: 61b7fdda76a71795751b5d34418467ab2872adf5
   ScreenshotManager: 2fac62be553326d7d32ef3019c9fa4fd7b59918d
-  SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
+  SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
   Yoga: 39d10448cb850f13892bdf82ac1f36cb29138c38
 
 PODFILE CHECKSUM: 3957102092bb49bb662ae384e29ce5c5a237f6a6
