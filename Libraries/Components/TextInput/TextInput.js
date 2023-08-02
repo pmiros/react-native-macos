@@ -40,7 +40,7 @@ type TextInputInstance = React.ElementRef<HostComponent<mixed>> & {
   +isFocused: () => boolean,
   +getNativeRef: () => ?React.ElementRef<HostComponent<mixed>>,
   +setSelection: (start: number, end: number) => void,
-  setGhostText: (ghostText: ?string) => void, // [macOS]
+  +setGhostText: (ghostText: ?string) => void, // [macOS]
 };
 
 let AndroidTextInput;

@@ -124,8 +124,10 @@ function GhostTextExample(): React.Node {
     [log, setLog],
   );
 
-  const textInput = React.useRef(undefined);
-  const textInput2 = React.useRef(undefined);
+  const textInput =
+    React.useRef<?React.ElementRef<typeof TextInput>>(undefined);
+  const textInput2 =
+    React.useRef<?React.ElementRef<typeof TextInput>>(undefined);
   const oldTextContent = React.useRef('');
   const oldText2Content = React.useRef('');
   return (
