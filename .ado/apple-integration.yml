@@ -74,6 +74,8 @@ jobs:
           cat package.json | jq .devDependencies
         displayName: Modify example app dependencies
         workingDirectory: react-native-test-app/example
+      - template: verdaccio-init.yml
+      - template: verdaccio-publish.yml
       - bash: |
           yarn --no-immutable
         displayName: Install npm dependencies
