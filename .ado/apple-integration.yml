@@ -79,7 +79,10 @@ jobs:
           npx beachball publish --branch origin/$(System.PullRequest.TargetBranch) --no-push --registry http://localhost:4873 --yes --access public
         displayName: Publish beachball packages to verdaccio
       - bash: |
-          yarn install --verbose --registry http://localhost:4873 --no-immutable
+          cat .yarnrc.yml | sed 's_^npmRegistryServer: ".*"$_npmRegistryServer: "http://localhost:4873"_' > .yarnrc.yml
+        displayName: Point react-native-test-app registry to verdaccio server
+      - bash: |
+          yarn --no-immutable
         displayName: Install npm dependencies
         workingDirectory: react-native-test-app
       - bash: |
