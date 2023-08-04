@@ -69,11 +69,10 @@ jobs:
             jq '.devDependencies["react"] = $(react_version)' |
             jq '.devDependencies["react-native"] = "^0.71"' |
             jq '.devDependencies["react-native-macos"] = "../../react-native-macos-$(package_version).tgz"' |
-            jq 'del(.devDependencies["react-native-windows"])' |
-            jq 'del(.private)' > .package.json
+            jq 'del(.devDependencies["react-native-windows"])' > .package.json
           mv .package.json package.json
           cat package.json | jq .devDependencies
-        displayName: Modify example app package.json
+        displayName: Modify example app dependencies
         workingDirectory: react-native-test-app/example
       - template: templates/verdaccio-init.yml
       - bash: |
