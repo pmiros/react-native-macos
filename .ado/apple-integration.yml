@@ -83,7 +83,7 @@ jobs:
         displayName: Point react-native-test-app registry to verdaccio server
         workingDirectory: react-native-test-app
       - bash: |
-          yarn --no-immutable
+          yarn --no-immutable --verbose
         displayName: Install npm dependencies
         workingDirectory: react-native-test-app
       - bash: |
