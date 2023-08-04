@@ -81,6 +81,7 @@ jobs:
       - bash: |
           cat .yarnrc.yml | sed 's_^npmRegistryServer: ".*"$_npmRegistryServer: "http://localhost:4873"_' > .yarnrc.yml
         displayName: Point react-native-test-app registry to verdaccio server
+        workingDirectory: react-native-test-app
       - bash: |
           yarn --no-immutable
         displayName: Install npm dependencies
