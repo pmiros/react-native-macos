@@ -416,27 +416,6 @@ static RCTUIView *RCTUIViewCommonInit(RCTUIView *self)
   [super layout];
 }
 
-- (NSArray<RCTUIView *> *)reactZIndexSortedSubviews
-{
-  // Check if sorting is required - in most cases it won't be.
-  BOOL sortingRequired = NO;
-  for (RCTUIView *subview in self.subviews) {
-    if (subview.reactZIndex != 0) {
-      sortingRequired = YES;
-      break;
-    }
-  }
-  return sortingRequired ? [self.subviews sortedArrayUsingComparator:^NSComparisonResult(RCTUIView *a, RCTUIView *b) {
-    if (a.reactZIndex > b.reactZIndex) {
-      return NSOrderedDescending;
-    } else {
-      // Ensure sorting is stable by treating equal zIndex as ascending so
-      // that original order is preserved.
-      return NSOrderedAscending;
-    }
-  }] : self.subviews;
-}
-
 - (void)setNeedsDisplay
 {
   self.needsDisplay = YES;
@@ -472,6 +451,7 @@ static RCTUIView *RCTUIViewCommonInit(RCTUIView *self)
 {
   if (self = [super initWithFrame:frame]) {
     self.scrollEnabled = YES;
+    self.drawsBackground = NO;
   }
   
   return self;
@@ -776,6 +756,98 @@ BOOL RCTUIViewSetClipsToBounds(RCTPlatformView *view)
     [super setHidden:YES];
   } else {
     [super setHidden:hidden];
+  }
+}
+
+@end
+
+// RCTUIImageView
+
+@implementation RCTUIImageView {
+  CALayer *_tintingLayer;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+  if (self = [super initWithFrame:frame]) {
+    [self setLayer:[[CALayer alloc] init]];
+    [self setWantsLayer:YES];
+  }
+  
+  return self;
+}
+
+- (BOOL)clipsToBounds
+{
+  return [[self layer] masksToBounds];
+}
+
+- (void)setClipsToBounds:(BOOL)clipsToBounds
+{
+  [[self layer] setMasksToBounds:clipsToBounds];
+}
+
+- (void)setContentMode:(UIViewContentMode)contentMode
+{
+  _contentMode = contentMode;
+  
+  CALayer *layer = [self layer];
+  switch (contentMode) {
+    case UIViewContentModeScaleAspectFill:
+      [layer setContentsGravity:kCAGravityResizeAspectFill];
+      break;
+      
+    case UIViewContentModeScaleAspectFit:
+      [layer setContentsGravity:kCAGravityResizeAspect];
+      break;
+      
+    case UIViewContentModeScaleToFill:
+      [layer setContentsGravity:kCAGravityResize];
+      break;
+      
+    case UIViewContentModeCenter:
+      [layer setContentsGravity:kCAGravityCenter];
+      break;
+    
+    default:
+      break;
+  }
+}
+
+- (UIImage *)image
+{
+  return [[self layer] contents];
+}
+
+- (void)setImage:(UIImage *)image
+{
+  CALayer *layer = [self layer];
+  
+  if ([layer contents] != image || [layer backgroundColor] != nil) {
+    if (_tintColor) {
+      if (!_tintingLayer) {
+        _tintingLayer = [CALayer new];
+        [_tintingLayer setFrame:self.bounds];
+        [_tintingLayer setAutoresizingMask:kCALayerWidthSizable | kCALayerHeightSizable];
+        [_tintingLayer setZPosition:1.0];
+        CIFilter *sourceInCompositingFilter = [CIFilter filterWithName:@"CISourceInCompositing"];
+        [sourceInCompositingFilter setDefaults];
+        [_tintingLayer setCompositingFilter:sourceInCompositingFilter];
+        [layer addSublayer:_tintingLayer];
+      }
+      [_tintingLayer setBackgroundColor:_tintColor.CGColor];
+    } else {
+      [_tintingLayer removeFromSuperlayer];
+      _tintingLayer = nil;
+    }
+    
+    if (image != nil && [image resizingMode] == NSImageResizingModeTile) {
+      [layer setContents:nil];
+      [layer setBackgroundColor:[NSColor colorWithPatternImage:image].CGColor];
+    } else {
+      [layer setContents:image];
+      [layer setBackgroundColor:nil];
+    }
   }
 }
 

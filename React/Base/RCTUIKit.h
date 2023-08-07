@@ -391,7 +391,6 @@ CGPathRef UIBezierPathCreateCGPathRef(UIBezierPath *path);
 - (void)layoutIfNeeded;
 
 - (void)layoutSubviews;
-- (NSArray<RCTUIView *> *)reactZIndexSortedSubviews; // [macOS]
 
 - (void)setNeedsDisplay;
 
@@ -417,10 +416,6 @@ CGPathRef UIBezierPathCreateCGPathRef(UIBezierPath *path);
  * Specifies whether focus ring should be drawn when the view has the first responder status.
  */
 @property (nonatomic, assign) BOOL enableFocusRing;
-/**
- * The z-index of the view.
- */
-@property (nonatomic, assign) NSInteger reactZIndex;
 
 @end
 
@@ -584,5 +579,19 @@ NS_ASSUME_NONNULL_END
 typedef UITouch RCTUITouch;
 #else
 @interface RCTUITouch : NSEvent
+@end
+#endif
+
+// RCTUIImageView
+
+#if !TARGET_OS_OSX
+typedef UIImageView RCTUIImageView;
+#else
+@interface RCTUIImageView : NSImageView
+NS_ASSUME_NONNULL_BEGIN
+@property (nonatomic, assign) BOOL clipsToBounds;
+@property (nonatomic, strong) RCTUIColor *tintColor;
+@property (nonatomic, assign) UIViewContentMode contentMode;
+NS_ASSUME_NONNULL_END
 @end
 #endif
