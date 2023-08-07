@@ -23,7 +23,7 @@ def build_codegen!(react_native_path, relative_installation_root, dir_manager: D
     puts codegen_npm_path
 
     puts "find:"
-    system("find #{relative_installation_root}")
+    system("find #{react_native_path}")
 
     if dir_manager.exist?(codegen_repo_path)
       codegen_cli_path = codegen_repo_path
