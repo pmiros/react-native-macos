@@ -74,7 +74,7 @@
     _backedTextInputView.accessibilityHelp = previousTextField.accessibilityHelp;
     _backedTextInputView.accessibilityIdentifier = previousTextField.accessibilityIdentifier;
     _backedTextInputView.accessibilityLabel = previousTextField.accessibilityLabel;
-    _backedTextInputView.accessibilityRole = previousTextField.accessibilityRole;
+    _backedTextInputView.accessibilityRole = NSAccessibilityTextFieldRole;
     _backedTextInputView.caretHidden = previousTextField.caretHidden;
     _backedTextInputView.contextMenuHidden = previousTextField.contextMenuHidden;
     _backedTextInputView.defaultTextAttributes = previousTextField.defaultTextAttributes;
