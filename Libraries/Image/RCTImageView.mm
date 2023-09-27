@@ -147,6 +147,7 @@ static NSDictionary *onLoadParamsForSource(RCTImageSource *source)
 #endif // macOS]
     _imageView = [RCTUIImageViewAnimated new];
     _imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    _imageView.cell.accessibilityElement = NO; // [macOS] image is not accessible by default
     [self addSubview:_imageView];
 
 #if !TARGET_OS_OSX // [macOS]
@@ -234,6 +235,13 @@ RCT_NOT_IMPLEMENTED(-(instancetype)initWithFrame : (CGRect)frame)
     _image = image; // [macOS]
     [self updateWithImage:image];
   }
+}
+
+- (void)setAccessible:(BOOL)accessible
+{
+  // [macOS] make imageView respect the accessible property from JS side
+  _accessible = accessible;
+  _imageView.cell.accessibilityElement = _accessible;
 }
 
 - (UIImage *)image

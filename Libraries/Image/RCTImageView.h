@@ -23,6 +23,7 @@
 @property (nonatomic, assign) CGFloat blurRadius;
 @property (nonatomic, assign) RCTResizeMode resizeMode;
 @property (nonatomic, copy) NSString *internal_analyticTag;
+@property (nonatomic, assign) BOOL accessible;
 
 #if TARGET_OS_OSX // [macOS
 @property (nonatomic, copy) NSColor *tintColor;
