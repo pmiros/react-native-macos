@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithEventDispatcher:(id<RCTEventDispatcherProtocol>)eventDispatcher; // [macOS]
 
 @property (nonatomic, assign) BOOL selectable;
+@property (nonatomic, assign) BOOL accessible;
 
 - (void)setTextStorage:(NSTextStorage *)textStorage
           contentFrame:(CGRect)contentFrame

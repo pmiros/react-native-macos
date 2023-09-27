@@ -86,6 +86,7 @@
     _textView.linkTextAttributes = @{};
     _textView.editable = NO;
     _textView.selectable = NO;
+    _textView.accessibilityElement = YES; // [macOS] textview is accessible by default
     _textView.verticallyResizable = NO;
     _textView.layoutManager.usesFontLeading = NO;
     _textStorage = _textView.textStorage;
@@ -126,6 +127,13 @@
     [self setFocusable:YES];
   }
 #endif // macOS]
+}
+
+- (void)setAccessible:(BOOL)accessible 
+{
+  // [macOS] making textView respect accessible prop from JS side
+  _accessible = accessible;
+  _textView.accessibilityElement = _accessible;
 }
 
 #if !TARGET_OS_OSX // [macOS]
