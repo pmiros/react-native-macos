@@ -60,6 +60,7 @@ RCT_EXPORT_MODULE()
   return [[RCTScrollView alloc] initWithEventDispatcher:self.bridge.eventDispatcher];
 }
 
+RCT_EXPORT_VIEW_PROPERTY(accessible, BOOL)
 RCT_EXPORT_VIEW_PROPERTY(alwaysBounceHorizontal, BOOL)
 RCT_EXPORT_VIEW_PROPERTY(alwaysBounceVertical, BOOL)
 RCT_EXPORT_NOT_OSX_VIEW_PROPERTY(bounces, BOOL) // [macOS]

@@ -41,6 +41,7 @@
 @property (nonatomic, readonly) RCTUIScrollView *scrollView; // [macOS]
 
 @property (nonatomic, assign) UIEdgeInsets contentInset;
+@property (nonatomic, assign) BOOL accessible;
 @property (nonatomic, assign) BOOL automaticallyAdjustContentInsets;
 @property (nonatomic, assign) BOOL automaticallyAdjustKeyboardInsets;
 @property (nonatomic, assign) BOOL DEPRECATED_sendUpdatedChildFrames;

@@ -536,6 +536,13 @@ static inline UIViewAnimationOptions animationOptionsWithCurve(UIViewAnimationCu
   [_scrollView setAccessibilityLabel:accessibilityLabel];
 }
 
+- (void)setAccessible:(BOOL)accessible
+{
+  // [macOS] make scroll view respect the accessible property from JS side
+    _accessible = accessible;
+    _scrollView.accessibilityElement = _accessible;
+}
+
 - (void)setAccessibilityRole:(NSAccessibilityRole)accessibilityRole
 {
   [_scrollView setAccessibilityRole:accessibilityRole];
